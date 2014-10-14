@@ -1,8 +1,8 @@
 # config valid only for Capistrano 3.1
 lock '3.2.1'
 
-set :application, '123dazahui.com'
-set :repo_url, 'git@github.com:cmingxu/123dazahui.com.git'
+set :application, '51dswz.com'
+set :repo_url, 'git@github.com:cmingxu/dswz.com.git'
 
 # Default branch is :master
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }.call
@@ -43,14 +43,14 @@ namespace :deploy do
     desc "#{command} unicorn server"
     task command do
       on roles(:all) do |host|
-        execute "/etc/init.d/unicorn_dazahui #{command}"
+        execute "/etc/init.d/unicorn_dswz #{command}"
       end
     end
   end
 
   task :change_dazahui_permission do
     on roles(:all) do |host|
-      execute "chmod a+x #{current_path}/config/dazahui.sh"
+      execute "chmod a+x #{current_path}/config/dswz.sh"
     end
   end
   after "deploy:published", "deploy:change_dazahui_permission"
@@ -58,8 +58,8 @@ namespace :deploy do
 
   task :setup_config do
     on roles(:all) do |host|
-      sudo "ln -nfs #{current_path}/config/123dazahui.com.conf /etc/nginx/sites-enabled/dazahui"
-      sudo "ln -nfs #{current_path}/config/dazahui.sh /etc/init.d/unicorn_dazahui"
+      sudo "ln -nfs #{current_path}/config/51dswz.com.conf /etc/nginx/sites-enabled/51dswz"
+      sudo "ln -nfs #{current_path}/config/dswz.sh /etc/init.d/unicorn_dswz"
     end
   end
   after "deploy:published", "deploy:setup_config"
