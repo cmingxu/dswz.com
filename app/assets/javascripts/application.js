@@ -12,5 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
+//= require kindeditor
 //= require_tree .
+//= require bootstrap-sprockets

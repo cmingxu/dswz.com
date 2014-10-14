@@ -1,0 +1,24 @@
+!!!
+%html{ :lang => "en" }
+  %head
+    %title 51电商网站
+    %meta{ :charset => 'utf-8' }
+    %meta{ "http-equiv" => "X-UA-Compatible", :content => 'IE=edge' }
+    %meta{ :name => 'viewport', :content => 'width=device-width, initial-scale=1' }
+    %meta{ :name => 'description', "content" => "电子商务网站，电商网站，B2C网站，电商系统，独立建站" }
+
+    = stylesheet_link_tag "application", :media => :all
+    = csrf_meta_tags
+
+  %body
+    = render :partial => "widgets/header"
+    .container-fluid
+      = yield
+      .scroll_top_div
+    = render :partial => "widgets/footer"
+
+    = javascript_include_tag "application"
+    = render :partial => "widgets/statistics" if Rails.env.production?
+
+
+

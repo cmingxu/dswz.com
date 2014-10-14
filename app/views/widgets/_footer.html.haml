@@ -1,0 +1,12 @@
+%footer
+  .container
+    .center-block
+      %ul.list-inline
+        - ABOUT_PAGES.keys.each do |link|
+          %li
+            =link_to ABOUT_PAGES[link], send("#{link}_path")
+      
+    .center-block
+      &copy; 51dswz.com
+
+

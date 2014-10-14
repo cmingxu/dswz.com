@@ -1,0 +1,36 @@
+.container-fluid.color-bar
+  .row-fluid
+    .col-lg-4{:style => 'background-color: red;'} &nbsp;
+    .col-lg-4{:style => 'background-color: green;'} &nbsp;
+    .col-lg-4{:style => 'background-color: blue;'} &nbsp;
+.navbar{:role => 'navigation'}
+  .container
+    .navbar-header
+      %button.navbar-toggle.collapsed{'data-toggle' => 'collapse', 'data-target' => '.navbar-collapse', 'type' => 'button'}
+        %span.sr-only   Toggle Navigation
+        %span.icon-bar
+        %span.icon-bar
+        %span.icon-bar
+      %a.navbar-brand{:href => '/'}  
+        51
+        %span
+          \.
+        电商网站
+    .collapse.navbar-collapse
+      %ul.nav.navbar-nav.pull-right
+        %li.active
+          %a{:href => "#main"} 主页
+        %li
+          %a{:href => "#cates"} 分类
+        %li
+          %a{:href => "#products"} 产品
+        %li
+          %a{:href => "#carts"} 购物车
+        %li
+          %a{:href => "#checkout"} 结算
+        %li
+          %a{:href => "#logistics"} 物流
+        %li
+          %a{:href => "#admin"} 后台
+
+
