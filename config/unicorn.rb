@@ -5,10 +5,10 @@ root_path = File.expand_path '../', File.dirname(__FILE__)
 log_file = root_path + '/log/unicorn.log'
 err_log  = root_path + '/log/unicorn_error.log'
 # 进程标识
-pid_file = '/tmp/unicorn.pid'
+pid_file = '/tmp/unicorn_dswz.pid'
 old_pid = pid_file + '.oldbin'
 # 通道
-socket_file = '/tmp/unicorn.sock'
+socket_file = '/tmp/unicorn_dswz.sock'
  
 worker_processes 2
 working_directory root_path
